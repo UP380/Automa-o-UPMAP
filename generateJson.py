@@ -24,7 +24,7 @@ def get_all_lists_in_folder(folder_id):
     all_lists = []
     if 'lists' in list_data:
         for task_list in list_data['lists']:
-            print('pegando uma list🤝')
+            print('pegando uma list')
             list_id = task_list['id']
             tasks = get_all_tasks_in_list(list_id)
             all_lists.append({
@@ -49,7 +49,7 @@ def get_all_folders_in_space(space_id):
                 'folder_info': folder,
                 'lists': lists,
             })
-    print('passou aqui tambem ta tudo certo👍')
+    print('passou aqui tambem ta tudo certo')
     return all_folders
 
 # Função para obter todas as informações de todos os espaços, pastas e tarefas
@@ -59,7 +59,7 @@ def get_all_data_in_all_spaces():
 
     all_spaces = []
     for space in space_data['spaces']:
-        print('Pegando mais um space😁')
+        print('Pegando mais um space')
         space_id = space['id']
         folders = get_all_folders_in_space(space_id)
         all_spaces.append({
@@ -82,13 +82,13 @@ all_folders = []
 all_tasks = []
 
 for space_info in all_data:
-    print('Setando spaces🌚')
+    print('Setando spaces')
     all_spaces.append(space_info['space_info'])
     for folder_info in space_info['folders']:
-        print('Coletando folders✅')
+        print('Coletando folders')
         all_folders.append(folder_info['folder_info'])
         for list_info in folder_info['lists']:
-            print('Setando o Json das lists📋')
+            print('Setando o Json das lists')
             all_tasks.extend(list_info['tasks'])
 
 # Salvar os dados de espaços, pastas e tarefas em arquivos JSON separados
